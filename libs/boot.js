@@ -1,3 +1,45 @@
+// nav-menu
+function createElement(...array) {
+    return array.map(el => document.createElement(el))
+}
+const navMenu = document.querySelector(".nav-menu")
+const siteHeaderLinks = document.querySelector(".site-header-links")
+function navMain() {
+    // console.log(1)
+    const [elspan, elspanTop, elspanBom] = createElement("span", "span", "span")
+    elspan.classList.add("nav-menu__line")
+    elspanTop.classList.add("nav-menu__line")
+    elspanBom.classList.add("nav-menu__line")
+    navMenu.addEventListener("click", function () {
+        const sreen = navMenu.getAttribute('data-sreen')
+        if (sreen == 1) {
+            siteHeaderLinks.style.opacity = 1;
+            siteHeaderLinks.style.zIndex = 2;
+            elspan.style.backgroundColor = "transparent";
+
+            elspanTop.style.position = "absolute";
+            elspanTop.style.transform = "rotate(45deg)";
+
+            elspanBom.style.position = "absolute";
+            elspanBom.style.transform = "rotate(-45deg)";
+            navMenu.setAttribute('data-sreen', 2)
+        } else {
+            siteHeaderLinks.style.opacity = 0;
+            siteHeaderLinks.style.zIndex = 0;
+            navMenu.setAttribute('data-sreen', 1)
+            elspan.style.backgroundColor = "white";
+            elspanTop.style.position = "unset";
+            elspanTop.style.transform = "unset";
+
+            elspanBom.style.position = "unset";
+            elspanBom.style.transform = "unset";
+        }
+    })
+    navMenu.append(elspanTop, elspan, elspanBom)
+}
+
+navMain()
+
 // about-card__box
 if (window.location.pathname.endsWith("/about.html")) {
     const CardBox = [...document.querySelectorAll('.about-card__box')]
@@ -53,26 +95,3 @@ if (window.location.pathname.endsWith("/contact.html")) {
     })
 }
 
-// nav-menu
-const navMenu = document.querySelector(".nav-menu")
-const allNav = navMenu.firstElementChild.className
-const siteHeaderLinks = document.querySelector(".site-header-links")
-const navMenuLine = document.querySelector(".nav-menu__line")
-// allNav.style.
-navMenu.addEventListener("click", function () {
-    const sreen = navMenu.getAttribute('data-sreen')
-    if (sreen == 1) {
-        siteHeaderLinks.style.opacity = 1;
-        siteHeaderLinks.style.zIndex = 2;
-        navMenu.setAttribute('data-sreen', 2)
-        navMenuLine.style.backgroundColor = "transparent";
-        // navMenuLine.after.backgroundColor = 'red';
-            console.log(1)
-    } else {
-        siteHeaderLinks.style.opacity = 0;
-        siteHeaderLinks.style.zIndex = 0;
-        navMenu.setAttribute('data-sreen', 1)
-        console.log(2)
-        navMenuLine.style.backgroundColor = "white";
-    }
-})
