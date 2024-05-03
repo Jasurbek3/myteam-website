@@ -18,10 +18,10 @@ function navMain() {
             elspan.style.backgroundColor = "transparent";
 
             elspanTop.style.position = "absolute";
-            elspanTop.style.transform = "rotate(45deg)";
+            elspanTop.style.transform = "rotate(-45deg)";
 
             elspanBom.style.position = "absolute";
-            elspanBom.style.transform = "rotate(-45deg)";
+            elspanBom.style.transform = "rotate(45deg)";
             navMenu.setAttribute('data-sreen', 2)
         } else {
             siteHeaderLinks.style.opacity = 0;
