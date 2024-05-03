@@ -259,6 +259,16 @@
         padding-right: 35px;
     }
 
+    .clients-pattern {
+        top: -100px;
+        left: -100px;
+    }
+
+    .about-card__box,
+    .about-card {
+        width: 100%;
+    }
+
     .link-contact {
         .contact-pattern {
             width: 0;
@@ -272,8 +282,13 @@
             flex-direction: row;
         }
     }
+    .about{
+        z-index: -2;
+    }
 
-
+    .about-pattern {
+        z-index: -1;
+    }
 
     .hero-title {
         font-size: 40px;
@@ -380,9 +395,10 @@
         height: 100vh;
         top: 0;
         right: 0;
+        justify-content: flex-start;
         flex-direction: column;
-        align-items: center;
-        justify-content: space-around;
+        padding-top: 165px;
+        row-gap: 36px;
         opacity: 0;
         transition: 0.4s;
     }
@@ -415,10 +431,6 @@
     .site-main {
         overflow: hidden;
     }
-
-
-
-
 
 }
 
