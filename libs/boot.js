@@ -38,7 +38,7 @@ function navMain() {
     navMenu.append(elspanTop, elspan, elspanBom)
 }
 
-navMain()
+
 
 // about-card__box
 if (window.location.pathname.endsWith("/about.html")) {
@@ -95,3 +95,11 @@ if (window.location.pathname.endsWith("/contact.html")) {
     })
 }
 
+
+
+
+
+
+
+
+navMain()
